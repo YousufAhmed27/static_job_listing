@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.attribution {
+    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+:root {
+    --DesaturatedDarkCyan: hsl(180, 29%, 50%);
+    --LightGrayishCyan: hsl(180, 52%, 96%);
+    --LightGrayishCyann: hsl(180, 31%, 95%);
+    --DarkGrayishCyan: hsl(180, 8%, 52%);
+    --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+}
+
+@font-face {
+    font-family: LeagueSpartan;
+    src: url(LeagueSpartan-Regular.ttf);
+}
+
+body {
+    background: url(./images/bg-header-desktop.svg) no-repeat, var(--LightGrayishCyan);
+    width: 1440px;
+    height: max-content;
+    font-family: LeagueSpartan;
+    position: relative;
+    display: grid;
+    place-content: center;
+    padding-top: 121px;
+}
+
+.container {
+    width: 1110px;
+    display: grid;
+    margin-bottom: 25px;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: 100%;
+    gap: 40px;
+}
+
+
+.filter {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 8px 9px 0 rgba(77, 139, 139, 0.4);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter .cont {
+    display: flex;
+    gap: 10px;
+}
+
+.filter .cont .template {
+    display: flex;
+    align-items: center;
+}
+
+.filter .cont .template .templa {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    color: var(--DesaturatedDarkCyan);
+    background-color: var(--LightGrayishCyann);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.filter .cont .template .close {
+    padding: 9px;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    background-color: var(--DesaturatedDarkCyan);
+    font-weight: 600;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.filter .cont .template .close:hover {
+    background-color: var(--VeryDarkGrayishCyan)
+}
+
+.filter .clear {
+    font-size: 15px;
+    color: var(--DarkGrayishCyan);
+    cursor: pointer;
+}
+
+.filter .clear:hover {
+    color: var(--DesaturatedDarkCyan);
+    text-decoration: var(--DesaturatedDarkCyan) solid underline;
+    font-size: 16px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: max-content;
+    gap: 25px;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 8px 9px 0 rgb(91, 164, 164, 0.2);
+    padding: 35px 40px;
+    display: grid;
+    grid-template: 88px / 88px 260px 635px;
+    gap: 25px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card.new {
+    background-image: linear-gradient(to right, var(--DesaturatedDarkCyan)5px, white 5px)
+}
+
+.detail {
+    display: grid;
+    grid-template: repeat(3, 30px) / 260px;
+    align-items: center;
+}
+
+.comp {
+    display: flex;
+    gap: 10px
+}
+
+.comp .name {
+    color: var(--DesaturatedDarkCyan);
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+
+.comp .new {
+    border-radius: 12px;
+    background-color: var(--DesaturatedDarkCyan);
+    color: white;
+    height: 22px;
+    font-size: 13px;
+    padding: 7px;
+}
+
+.comp .featured {
+    border-radius: 12px;
+    background-color: var(--VeryDarkGrayishCyan);
+    color: white;
+    height: 22px;
+    font-size: 13px;
+    padding: 7px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.title:hover {
+    color: var(--DesaturatedDarkCyan)
+}
+
+.time {
+    color: var(--DarkGrayishCyan);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.time span {
+    margin-right: 15px;
+}
+
+.filt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.temp {
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--DesaturatedDarkCyan);
+    background-color: var(--LightGrayishCyann);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.temp:hover {
+    background-color: var(--DesaturatedDarkCyan);
+    color: white;
+}
+
+@media screen and (max-width: 380px) {
+    body {
+        width: 375px;
+        background: url(./images/bg-header-mobile.svg) no-repeat, var(--LightGrayishCyan);
+    }
+
+    .container {
+        width: 325px;
+    }
+
+    .main {
+        gap: 40px;
+    }
+
+    .card {
+        grid-template: 90px 1fr/ 100%;
+    }
+
+    .card img {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -25px;
+        left: 40px;
+    }
+
+    .filt {
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .cont {
+        flex-wrap: wrap;
+        max-width: 240px;
+    }
+
+    .filter {
+        padding: 20px;
+    }
+}
